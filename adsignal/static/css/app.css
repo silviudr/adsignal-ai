@@ -1,0 +1,79 @@
+/* AdSignal — custom styles */
+
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+/* KPI cards */
+.kpi-card {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.kpi-card .kpi-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kpi-card .kpi-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+}
+
+.kpi-positive { color: #198754; }
+.kpi-negative { color: #dc3545; }
+.kpi-neutral  { color: #0d6efd; }
+
+/* Action board */
+.action-badge {
+  font-size: 0.7rem;
+}
+
+/* Tables */
+.table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+  font-weight: 600;
+}
+
+.table td {
+  font-size: 0.875rem;
+  vertical-align: middle;
+}
+
+/* Charts */
+.chart-container {
+  position: relative;
+  height: 260px;
+}
+
+/* Q&A */
+#qa-answer {
+  background: #f1f3f5;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  min-height: 3rem;
+}
+
+/* Reason pill */
+.reason-pill {
+  font-size: 0.7rem;
+  background: #fff3cd;
+  color: #664d03;
+  border-radius: 1rem;
+  padding: 0.15rem 0.6rem;
+  white-space: nowrap;
+}
