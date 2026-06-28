@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}AdSignal — Campaign Intelligence for Media Buyers{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8 text-center py-5">
+    <h1 class="display-5 fw-bold mb-3">
+      <span class="text-warning">Ad</span>Signal
+    </h1>
+    <p class="lead text-muted mb-2">
+      AI-powered campaign triage and creative performance intelligence for media buyers.
+    </p>
+    <p class="text-muted mb-5">
+      Upload campaign data. Find what is wasting money. Learn which creative angles work.<br>
+      Get tomorrow's test plan.
+    </p>
+
+    <div class="d-flex gap-3 justify-content-center flex-wrap mb-5">
+      <form method="POST" action="/load-demo">
+        <button type="submit" class="btn btn-warning btn-lg px-4 fw-semibold">
+          ⚡ Load Demo Dataset
+        </button>
+      </form>
+      <a href="#upload" class="btn btn-outline-secondary btn-lg px-4">
+        Upload CSV Files
+      </a>
+    </div>
+
+    <div class="row g-3 text-start mb-5">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <div class="fs-4 mb-2">🎯</div>
+            <h6 class="fw-bold">Campaign Triage</h6>
+            <p class="small text-muted mb-0">Instantly see what to pause, scale, watch, and refresh — backed by real metric thresholds.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <div class="fs-4 mb-2">🎨</div>
+            <h6 class="fw-bold">Creative Intelligence</h6>
+            <p class="small text-muted mb-0">Discover which hooks, angles, and CTAs actually convert on each platform.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <div class="fs-4 mb-2">🤖</div>
+            <h6 class="fw-bold">AI Copilot</h6>
+            <p class="small text-muted mb-0">Ask natural-language questions. Get grounded, data-driven answers for your team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center" id="upload">
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Upload Your Campaign Data</div>
+      <div class="card-body">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Campaign Performance CSV <span class="text-danger">*</span></label>
+            <input type="file" class="form-control form-control-sm" name="performance_csv" accept=".csv" required>
+            <div class="form-text">Required columns: date, platform, campaign_id, ad_id, creative_id, spend, impressions, clicks, conversions, revenue</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Creative Metadata CSV <span class="text-danger">*</span></label>
+            <input type="file" class="form-control form-control-sm" name="creative_csv" accept=".csv" required>
+            <div class="form-text">Required columns: creative_id, hook_style</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Landing Pages CSV <span class="text-muted">(optional)</span></label>
+            <input type="file" class="form-control form-control-sm" name="landing_pages_csv" accept=".csv">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Analyze Campaign Data</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

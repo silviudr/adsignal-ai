@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adsignal"
+version = "0.1.0"
+description = "AI-powered campaign triage and creative performance intelligence for media buyers"
+requires-python = ">=3.13"
+dependencies = [
+    "Flask",
+    "pandas",
+    "numpy",
+    "requests",
+    "python-dotenv",
+    "gunicorn",
+    "markdown",
+    "pydantic",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adsignal*"]
