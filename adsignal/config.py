@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-change-in-production")
+SECRET_KEY = os.environ.get("SECRET_KEY")
+if not SECRET_KEY:
+    SECRET_KEY = os.urandom(32)
 
 LLM_PROVIDER = os.environ.get("LLM_PROVIDER", "openrouter")
 
